@@ -1,0 +1,21 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-card class="example-card" *ngIf="!isLoading">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image': 'url('+ user.avatar +')'}"></div>
+      <mat-card-title>Detail</mat-card-title>
+      <mat-card-subtitle>{{ user.first_name }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{ user.avatar }}" alt="{{ user.first_name }}">
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>Name: {{ user.first_name }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>LastNam: {{ user.last_name }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Email: {{ user.email }}}</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-action-list>
+      <a [routerLink]="['/']">Return list</a>
+    </mat-action-list>
+</mat-card>

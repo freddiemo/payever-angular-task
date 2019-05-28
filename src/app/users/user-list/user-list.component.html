@@ -1,0 +1,10 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-list *ngIf="users.length > 0 && !isLoading">
+  <mat-card *ngFor="let user of users" >
+    <a [routerLink]="['/user', user.id]">
+      {{ user.first_name }} {{ user.last_name}}
+    </a>
+    <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+  </mat-card>
+</mat-list>
+<mat-paginator [length]="totalUsers" [pageSize]="usersPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"></mat-paginator>
